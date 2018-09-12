@@ -3,6 +3,7 @@
 /node_modules
 /vendor
 .sass-cache/
+composer.lock
 
 # app generated files #
 .env
