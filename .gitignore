@@ -5,9 +5,9 @@
 .sass-cache/
 
 # app generated files #
+.env
 .htaccess
 /public/.htaccess
-/app/config/connection.php
 
 # Compiled source #
 ###################

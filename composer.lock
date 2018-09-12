@@ -1,0 +1,123 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "86aa3032a793d63ccad8ce6cc5c1b1e5",
+    "packages": [
+        {
+            "name": "durmus-aydogdu/laravel-composer",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/durmus-aydogdu/laravel-composer.git",
+                "reference": "c2e7dc92ae9ba1abc9c703f3ec30a3623b417099"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/durmus-aydogdu/laravel-composer/zipball/c2e7dc92ae9ba1abc9c703f3ec30a3623b417099",
+                "reference": "c2e7dc92ae9ba1abc9c703f3ec30a3623b417099",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DurmusAydogdu\\LaravelComposer\\ComposerCommandServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "classmap": [],
+                "psr-4": {
+                    "DurmusAydogdu\\LaravelComposer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Durmuş AYDOĞDU",
+                    "email": "aydogdu.durmus@gmail.com"
+                }
+            ],
+            "description": "All you need to run composer commands via artisan",
+            "keywords": [
+                "artisan",
+                "clear-cache",
+                "composer",
+                "dump-autoload",
+                "install package",
+                "laravel",
+                "php",
+                "remove package"
+            ],
+            "time": "2018-06-05T05:09:29+00:00"
+        },
+        {
+            "name": "symfony/dotenv",
+            "version": "v4.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "22ca63c46e252b8a8f37b8f9e6da66bff5b3d3e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/22ca63c46e252b8a8f37b8f9e6da66bff5b3d3e7",
+                "reference": "22ca63c46e252b8a8f37b8f9e6da66bff5b3d3e7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1.3"
+            },
+            "require-dev": {
+                "symfony/process": "~3.4|~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "time": "2018-07-26T11:24:31+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
