@@ -4,10 +4,11 @@
 /vendor
 .sass-cache/
 composer.lock
+package-lock.json
 
 # app generated files #
 .env
-.htaccess
+/.htaccess
 /public/.htaccess
 
 # Compiled source #

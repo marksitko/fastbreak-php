@@ -1,0 +1,31 @@
+{
+  "name": "fastbreak-php",
+  "version": "0.0.1",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marksitko/fastbreak-php.git"
+  },
+  "author": "Mark Sitko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marksitko/fastbreak-php/issues"
+  },
+  "homepage": "https://github.com/marksitko/fastbreak-php#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "cssnano": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1"
+  }
+}
