@@ -7,3 +7,4 @@ define('APP_URL', env('APP_URL', 'http://localhost:8888/sd-lab/fastbreak-php/-mv
 define('APP_ROOT', dirname(__DIR__));
 define('APP_NAME', env('APP_NAME', 'FastbreakPHP'));
 define('CRAWL_APP', env('CRAWL_APP', true));
+define('APP_ENV', env('APP_ENV', 'local'));
