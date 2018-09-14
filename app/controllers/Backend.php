@@ -1,20 +1,19 @@
 <?php
 namespace Fastbreak\controllers;
 
-use Fastbreak\libraries\Controller;
-use Fastbreak\services\ActionService;
-use Fastbreak\services\NotificationService;
+use FastbreakCore\libraries\Controller;
+use Fastbreak\services\PageActions;
 
 class Backend extends Controller
 {
 
     protected $viewDirectory = 'backend/';
-    private $actionService;
+    private $pageActions;
 
     public function __construct()
     {
         $this->pagesModel = $this->model('Backend');
-        $this->actionService = new ActionService();
+        $this->pageActions = new PageActions();
     }
 
     public function index()

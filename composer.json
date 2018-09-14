@@ -12,6 +12,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "FastbreakCore\\": "app/core",
             "Fastbreak\\": "app/"
         }
     }

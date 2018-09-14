@@ -1,7 +1,7 @@
 <?php
 namespace Fastbreak\models;
 
-use Fastbreak\libraries\Model;
+use FastbreakCore\libraries\Model;
 
 class Backend extends Model
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Fastbreak\libraries;
+namespace FastbreakCore\libraries;
 
 class Controller 
 {

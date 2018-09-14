@@ -1,21 +1,20 @@
 <?php
 namespace Fastbreak\controllers;
 
-use Fastbreak\libraries\Controller;
-use Fastbreak\services\ActionService;
-use Fastbreak\services\NotificationService;
+use FastbreakCore\libraries\Controller;
+use Fastbreak\services\PageActions;
 
 class Pages extends Controller
 {
     
     protected $viewDirectory = 'pages/';
     protected $pagesModel;
-    private $actionService;
+    private $pageActions;
 
     public function __construct()
     {
         $this->pagesModel = $this->model('Page');
-        $this->actionService = new ActionService();
+        $this->pageActions = new PageActions();
     }
 
     public function index()
@@ -42,12 +41,12 @@ class Pages extends Controller
 
     public function posts()
     {
-        if(ActionService::isPostRequest()) {
-            $_POST = ActionService::sanitizePost();
-            $this->actionService->insertPost($_POST);
+        if(PageActions::isPostRequest()) {
+            $_POST = PageActions::sanitizePost();
+            $this->pageActions->insertPost($_POST);
         }
         
-        $notification = NotificationService::getNotification();
+        $notification = $this->pageActions->notification->getNotification();
         $data = array(
             'title' => 'Posts',
             'notification' => $notification
