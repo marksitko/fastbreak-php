@@ -3,7 +3,8 @@ namespace Fastbreak\libraries;
 
 use Fastbreak\controllers\Pages;
 
-class Core {
+class Core 
+{
 
 	private $currentController;
 	private $currentMethod = 'index';
@@ -54,9 +55,8 @@ class Core {
 
 	private function setMethod()
 	{
-		$method = $this->createMethodName($this->getUrl()[0]);
-		if (isset($this->getUrl()[0]) && method_exists($this->currentController, $method)) {
-			$this->currentMethod = $method;
+		if (isset($this->getUrl()[0]) && method_exists($this->currentController, $this->createMethodName($this->getUrl()[0])) ) {
+			$this->currentMethod = $this->createMethodName($this->getUrl()[0]);
 		}
 		unset($this->url[0]);
 		$this->setUrl(array_values($this->getUrl()));
@@ -70,7 +70,7 @@ class Core {
 	}
 
 	private function createMethodName($method)
-	{
+	{	
 		$method = preg_split('/[-_]/', $method);
 		$method = array_map(function ($m) {
 			return ucwords($m);
@@ -81,7 +81,7 @@ class Core {
 	
 	private function getUrl()
 	{
-		return $this->url;
+		return (array) $this->url;
 	}
 
 }
