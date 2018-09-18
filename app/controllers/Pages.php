@@ -2,6 +2,7 @@
 namespace Fastbreak\controllers;
 
 use FastbreakCore\libraries\Controller;
+use FastbreakCore\services\RequestService;
 use Fastbreak\services\PageActions;
 
 class Pages extends Controller
@@ -40,9 +41,8 @@ class Pages extends Controller
     }
 
     public function posts()
-    {
-        if(PageActions::isPostRequest()) {
-            $_POST = PageActions::sanitizePost();
+    {   
+        if(RequestService::isPost()) {
             $this->pageActions->insertPost($_POST);
         }
         

@@ -15,6 +15,7 @@ class PageActions extends ActionService
 
     public function insertPost($data)
     {
+        $data = self::sanitizePost($data);
         if ($this->pagesModel->insertPost($data)) {
             $this->notification->setStatus('success');
             $this->notification->setMsg('Your data was successfully saved');

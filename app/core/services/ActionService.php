@@ -12,11 +12,6 @@ class ActionService
         $this->notification = new NotificationService();
     }
 
-    public static function isPostRequest()
-    {
-        return $_SERVER['REQUEST_METHOD'] == 'POST';
-    }
-
     public static function sanitizePost()
     {
         return filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
