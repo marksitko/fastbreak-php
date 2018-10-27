@@ -15,7 +15,7 @@ class Pages extends Controller
     public function __construct()
     {
         $this->pagesModel = $this->model('Page');
-        $this->pageActions = new PageActions();
+        $this->pageActions = new PageActions($this->pagesModel);
     }
 
     public function index()

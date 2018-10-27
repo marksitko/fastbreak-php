@@ -2,15 +2,13 @@
 namespace Fastbreak\services;
 
 use FastbreakCore\services\ActionService;
-use Fastbreak\models\Backend;
 
 class BackendActions extends ActionService
 {
 
-    public function __construct()
+    public function __construct($model)
     {
-        parent::__construct();
-        $this->backendModel = new Backend();
+        parent::__construct($model);
     }
 
 }

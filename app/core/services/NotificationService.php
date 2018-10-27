@@ -36,6 +36,9 @@ class NotificationService
 
     public function getNotification()
     {
+        if (is_null($this->getStatus()) && is_null($this->getMsg())) {
+            return null;
+        }
         return array(
             'status' => $this->getStatus(),
             'msg' => $this->getMsg(),

@@ -2,18 +2,18 @@
 namespace Fastbreak\controllers;
 
 use FastbreakCore\libraries\Controller;
-use Fastbreak\services\PageActions;
+use Fastbreak\services\BackendActions;
 
 class Backend extends Controller
 {
 
     protected $viewDirectory = 'backend/';
-    private $pageActions;
+    private $backendActions;
 
     public function __construct()
     {
-        $this->pagesModel = $this->model('Backend');
-        $this->pageActions = new PageActions();
+        $this->backendModel = $this->model('Backend');
+        $this->backendActions = new BackendActions($this->backendModel);
     }
 
     public function index()

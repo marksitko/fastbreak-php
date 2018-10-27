@@ -11,7 +11,7 @@ class Page extends Model
 		parent::__construct();
 	}
 
-	public function getUseres() 
+	public function getUsers() 
 	{
 		$this->db->query('SELECT * FROM users');
 		return $this->db->results();
