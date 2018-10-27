@@ -1,6 +1,6 @@
-<?php the_header(); ?>
+<?php getHeader(); ?>
 
-<?php if ($data['notification']) $this->component('shared/notification', $data['notification']); ?>
+<?php $this->component('shared/notification', $data['notification']); ?>
 
 <h1><?php echo $data['title']; ?></h1>
 
@@ -19,4 +19,4 @@
 </p>
 </form>
 
-<?php the_footer(); ?>
+<?php getFooter(); ?>

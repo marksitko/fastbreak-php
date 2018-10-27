@@ -19,17 +19,17 @@ class Controller
 	}
 
 	public function view( $view, $data = array() ) {
-		if( file_exists('../app/views/' . $this->viewDirectory . $view . '.php') ) {
-			require '../app/views/' . $this->viewDirectory . $view . '.php';
+		if( file_exists( APP_ROOT  . '/views/' . $this->viewDirectory . $view . '.php') ) {
+			require APP_ROOT . '/views/' . $this->viewDirectory . $view . '.php';
 		} else {
 			die('View does not exist');
 		}
 	}
 
-	public function component($view, $data = array())
+	public function component($view, $data = array() )
 	{
-		if (file_exists('../app/views/components/' . $view . '.php')) {
-			include '../app/views/components/' . $view . '.php';
+		if (file_exists( APP_ROOT . '/views/components/' . $view . '.php')) {
+			include APP_ROOT . '/views/components/' . $view . '.php';
 		} else {
 			die('Component does not exist');
 		}

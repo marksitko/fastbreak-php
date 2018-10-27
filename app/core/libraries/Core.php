@@ -1,8 +1,6 @@
 <?php 
 namespace FastbreakCore\libraries;
 
-use Fastbreak\controllers\Pages;
-
 class Core 
 {
 
@@ -39,15 +37,9 @@ class Core
 
 	private function setController()
 	{
-		$this->currentController = new Pages;
-		if( isset($this->getUrl()[0]) ) {
-			$controller = ucwords($this->getUrl()[0]);
-			$controllerNamespace = 'Fastbreak\controllers\\';
-			$controllerClass = $controllerNamespace . $controller;
-			if(class_exists($controllerClass)) {
-				$this->currentController = new $controllerClass;
-				unset($this->url[0]);
-			} 
+		$this->setEntryController();
+		if (isset($this->getUrl()[0])) {
+			$this->searchForExistingController(ucwords($this->getUrl()[0]));
 		} 
 		$this->setUrl(array_values($this->getUrl()));
 		return $this;
@@ -82,6 +74,29 @@ class Core
 	private function getUrl()
 	{
 		return (array) $this->url;
+	}
+
+	private function setEntryController()
+	{
+		$content = file_get_contents(APP_ROOT . '/controllers/' . ENTRY_CONTROLLER . '.php');
+		$namespace = namespaceByContent($content);
+		$entryController = $namespace . '\\' . ENTRY_CONTROLLER;
+		$this->currentController = new $entryController;
+		return $this;
+	}
+
+	private function searchForExistingController($controller)
+	{
+		if(file_exists(APP_ROOT . '/controllers/' . $controller . '.php')) {
+			$content = file_get_contents(APP_ROOT . '/controllers/' . $controller . '.php');
+			$namespace = namespaceByContent($content);
+			$controller = $namespace . '\\' . $controller;
+			if (class_exists($controller)) {
+				$this->currentController = new $controller;
+				unset($this->url[0]);
+			}
+		}
+		return $this;
 	}
 
 }
